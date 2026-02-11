@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -43,10 +43,51 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleHash);
   }, []);
 
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          setActive(hash);
+        }
+      }, 0);
+    }
+  }, [hash, pathname]);
+
   const scrollTo = (href: string) => {
     setOpen(false);
-    const el = document.getElementById(href.slice(1));
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+
+    // Cross-page navigation
+    if (pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        window.location.hash = href;
+        // Ensure scroll happens after navigation and hash set
+        const id = href.slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          setActive(href);
+        }
+      }, 300); // Increased delay to ensure page load
+      return;
+    }
+
+    // Same-page navigation
+    const id = href.slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      // Small delay to allow mobile menu to close/animation to start
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth" });
+        setActive(href);
+        window.history.pushState(null, "", href);
+      }, 100);
+    }
   };
 
   return (
