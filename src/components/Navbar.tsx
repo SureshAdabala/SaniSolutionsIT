@@ -60,7 +60,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <button onClick={() => scrollTo("#home")} className="flex items-center gap-2">
           <img src={logo} alt="SAN IT Solutions Logo" className="w-10 h-10 rounded-lg object-contain" />
-          <div className="hidden sm:block">
+          <div className="block">
             <span className="font-display font-bold text-lg text-white leading-none">
               SAN IT Solutions
             </span>
