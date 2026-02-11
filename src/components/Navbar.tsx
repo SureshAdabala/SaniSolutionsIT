@@ -92,23 +92,15 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white ${scrolled
         ? "py-2 shadow-lg"
         : "py-4"
         }`}
-      style={{ background: scrolled ? 'hsl(220 65% 12% / 0.95)' : 'hsl(220 65% 12% / 0.7)', backdropFilter: 'blur(16px)' }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 lg:px-8">
         <button onClick={() => scrollTo("#home")} className="flex items-center gap-2">
           <img src={logo} alt="SAN IT Solutions Logo" className="w-10 h-10 rounded-lg object-contain" />
-          <div className="block">
-            <span className="font-display font-bold text-lg text-white leading-none">
-              SAN IT Solutions
-            </span>
-            <span className="block text-[10px] tracking-widest uppercase text-white/60">
-              ISO 9001:2015 Certified
-            </span>
-          </div>
+          <img src="/new-logo.png.jpg" alt="SAN IT Solutions" className="h-8 object-contain" />
         </button>
 
         <nav className="hidden xl:flex items-center gap-1">
@@ -117,8 +109,8 @@ const Navbar = () => {
               key={link.href}
               onClick={() => scrollTo(link.href)}
               className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${active === link.href
-                ? "text-gold bg-gold/10"
-                : "text-white/80 hover:text-white hover:bg-white/10"
+                ? "text-blue-600 bg-blue-50"
+                : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                 }`}
             >
               {link.label}
@@ -129,20 +121,20 @@ const Navbar = () => {
         <div className="hidden xl:flex items-center gap-3">
           <a
             href="tel:+919980932551"
-            className="flex items-center gap-2 text-sm font-medium text-white/80 hover:text-gold transition-colors"
+            className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
           >
             <Phone size={14} />
             +91 99809 32551
           </a>
           <button
             onClick={() => navigate("/login")}
-            className="px-4 py-2 text-sm font-medium text-white/90 hover:text-white transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
           >
             Login
           </button>
           <button
             onClick={() => navigate("/signup")}
-            className="px-4 py-2 text-sm font-medium bg-gold text-white rounded-md hover:bg-gold/90 transition-colors"
+            className="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
           >
             Sign Up
           </button>
@@ -150,7 +142,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen(!open)}
-          className="xl:hidden p-2 text-white"
+          className="xl:hidden p-2 text-gray-700"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -162,7 +154,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden glass-dark overflow-hidden"
+            className="xl:hidden bg-white border-t border-gray-100 overflow-hidden shadow-lg"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
               {links.map((link) => (
@@ -170,20 +162,20 @@ const Navbar = () => {
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
                   className={`px-4 py-3 text-left text-sm font-medium rounded-lg transition-all ${active === link.href
-                    ? "text-gold bg-gold/10"
-                    : "text-white/75 hover:bg-white/10"
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-gray-700 hover:bg-gray-50"
                     }`}
                 >
                   {link.label}
                 </button>
               ))}
-              <div className="h-px bg-white/10 my-2" />
+              <div className="h-px bg-gray-100 my-2" />
               <button
                 onClick={() => {
                   setOpen(false);
                   navigate("/login");
                 }}
-                className="px-4 py-3 text-left text-sm font-medium text-white/75 hover:bg-white/10 rounded-lg transition-all"
+                className="px-4 py-3 text-left text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-all"
               >
                 Login
               </button>
@@ -192,7 +184,7 @@ const Navbar = () => {
                   setOpen(false);
                   navigate("/signup");
                 }}
-                className="px-4 py-3 text-left text-sm font-medium text-gold hover:bg-gold/10 rounded-lg transition-all"
+                className="px-4 py-3 text-left text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
               >
                 Sign Up
               </button>

@@ -6,7 +6,7 @@ const stats = [
   { icon: Users, value: 50000, suffix: "+", label: "Candidates Trained" },
   { icon: MapPin, value: 200, suffix: "+", label: "Centers & Partners" },
   { icon: Calendar, value: 2006, suffix: "", label: "Established Since", isYear: true },
-  { icon: Award, value: 1500, suffix: "+", label: "Expert Trainers" },
+  { icon: Award, value: 500, suffix: "+", label: "Expert Trainers" },
 ];
 
 function AnimatedCounter({ value, suffix, isYear }: { value: number; suffix: string; isYear?: boolean }) {

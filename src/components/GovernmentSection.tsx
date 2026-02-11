@@ -1,16 +1,35 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
 
-const sscBadges = ["ESSCI", "TSSC", "NASSCOM", "RSDC", "RASCI"];
+const sscLogos = [
+  { name: "ESSCI", src: "/ESSCI-Logo.jpeg" },
+  { name: "TSSC", src: "/TSSC-Logo.png" },
+  { name: "NASSCOM", src: "/NASSCOM-Logo.jpeg" },
+  { name: "RSDC", src: "/RSDC-Logo.png" },
+  { name: "RASCI", src: "/RASCI-Logo.jpeg" },
+];
 
 const govtPrograms = [
-  "KSDC", "PMKVY", "CMKKY", "NAPS", "NATS", "BBMP", "NULM", "NRLM",
-  "KEONICS", "CCTNS", "DGR", "NIELIT", "MEPMA", "RPL", "NDLM"
+  { name: "KSDC", src: "/KSDC-Logo.jpg" },
+  { name: "PMKVY", src: "/PMKVY-Logo.png" },
+  { name: "CMKKY", src: "/CMKKY-Logo.png" },
+  { name: "NAPS", src: "/NAPS-Logo.png" },
+  { name: "NATS", src: "/NATS-Logo.png" },
+  { name: "BBMP", src: "/BBMP-Logo.png" },
+  { name: "NULM", src: "/NULM-Logo.webp" },
+  { name: "NRLM", src: "/NRLM-Logo.png" },
+  { name: "KEONICS", src: "/KEONICS-Logo.jpeg" },
+  { name: "CCTNS", src: "/CCTNS-Logo.png" },
+  { name: "DGR", src: "/DGR-Logo.jpg" },
+  { name: "NIELIT", src: "/NIELIT-Logo.jpg" },
+  { name: "MEPMA", src: "/MEPMA-Logo.png" },
+  { name: "RPL", src: "/RPL-Logo.jpg" },
+  { name: "NDLM", src: "/NDLM-Logo.jpeg" },
 ];
 
 const GovernmentSection = () => {
   return (
-    <section id="government" className="section-padding section-alt">
+    <section id="government" className="section-padding section-alt overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,48 +50,95 @@ const GovernmentSection = () => {
           </p>
         </motion.div>
 
-        {/* NSDC SSCs */}
+        {/* NSDC SSCs Carousel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-16"
         >
-          <h3 className="text-center text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-6">
+          <h3 className="text-center text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-8">
             NSDC Sector Skill Councils
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {sscBadges.map((badge) => (
-              <div
-                key={badge}
-                className="glass-card rounded-xl px-6 py-4 flex items-center gap-3"
-              >
-                <Shield size={18} className="text-gold-dark" />
-                <span className="font-semibold text-foreground">{badge}</span>
-              </div>
-            ))}
+
+          <div className="relative flex overflow-x-hidden group">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...sscLogos, ...sscLogos].map((logo, index) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="glass-card rounded-xl px-8 py-4 mx-4 flex items-center justify-center min-w-[200px] h-24 hover:bg-white/50 transition-colors"
+                >
+                  <img
+                    src={logo.src}
+                    alt={`${logo.name} Logo`}
+                    className="max-h-16 w-auto object-contain mix-blend-multiply"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap">
+              {[...sscLogos, ...sscLogos].map((logo, index) => (
+                <div
+                  key={`${logo.name}-duplicate-${index}`}
+                  className="glass-card rounded-xl px-8 py-4 mx-4 flex items-center justify-center min-w-[200px] h-24 hover:bg-white/50 transition-colors"
+                >
+                  <img
+                    src={logo.src}
+                    alt={`${logo.name} Logo`}
+                    className="max-h-16 w-auto object-contain mix-blend-multiply"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
-        {/* Government Programs */}
+        {/* Government Programs Carousel */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="text-center text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-6">
+          <h3 className="text-center text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-8">
             Government Schemes & Programs
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {govtPrograms.map((program) => (
-              <span
-                key={program}
-                className="px-5 py-2.5 rounded-lg bg-navy/5 text-navy font-medium text-sm border border-navy/10 hover:bg-navy/10 transition-colors cursor-default"
-              >
-                {program}
-              </span>
-            ))}
+
+          <div className="relative flex overflow-x-hidden group">
+            <div className="flex animate-marquee-slow whitespace-nowrap">
+              {[...govtPrograms, ...govtPrograms].map((program, index) => (
+                <div
+                  key={`${program.name}-${index}`}
+                  className="glass-card rounded-xl p-4 mx-4 flex flex-col items-center justify-center min-w-[180px] h-32 hover:bg-white/50 transition-colors gap-3"
+                >
+                  <div className="h-16 w-full flex items-center justify-center">
+                    <img
+                      src={program.src}
+                      alt={`${program.name} Logo`}
+                      className="max-h-full max-w-full object-contain mix-blend-multiply"
+                    />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">{program.name}</span>
+                </div>
+              ))}
+            </div>
+            <div className="absolute top-0 flex animate-marquee2-slow whitespace-nowrap">
+              {[...govtPrograms, ...govtPrograms].map((program, index) => (
+                <div
+                  key={`${program.name}-duplicate-${index}`}
+                  className="glass-card rounded-xl p-4 mx-4 flex flex-col items-center justify-center min-w-[180px] h-32 hover:bg-white/50 transition-colors gap-3"
+                >
+                  <div className="h-16 w-full flex items-center justify-center">
+                    <img
+                      src={program.src}
+                      alt={`${program.name} Logo`}
+                      className="max-h-full max-w-full object-contain mix-blend-multiply"
+                    />
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">{program.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 

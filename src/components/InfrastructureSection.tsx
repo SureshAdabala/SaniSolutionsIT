@@ -19,7 +19,7 @@ const features = [
   },
   {
     icon: Users,
-    title: "1,500+ Expert Trainers",
+    title: "500+ Expert Trainers",
     desc: "Certified trainers across all technologies ensuring highest quality training delivery.",
   },
 ];
