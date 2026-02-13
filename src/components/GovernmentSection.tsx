@@ -62,11 +62,11 @@ const GovernmentSection = () => {
           </h3>
 
           <div className="relative flex overflow-x-hidden group">
-            <div className="flex animate-marquee whitespace-nowrap">
+            <div className="flex animate-marquee group-hover:[animation-play-state:paused] whitespace-nowrap">
               {[...sscLogos, ...sscLogos].map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="glass-card rounded-xl px-8 py-4 mx-4 flex items-center justify-center min-w-[200px] h-24 hover:bg-white/50 transition-colors"
+                  className="glass-card rounded-xl px-8 py-4 mx-4 flex items-center justify-center min-w-[200px] h-24 hover:bg-white/50 hover:scale-110 active:scale-105 transition-all duration-300 ease-in-out hover:z-10"
                 >
                   <img
                     src={logo.src}
@@ -76,11 +76,11 @@ const GovernmentSection = () => {
                 </div>
               ))}
             </div>
-            <div className="absolute top-0 flex animate-marquee2 whitespace-nowrap">
+            <div className="absolute top-0 flex animate-marquee2 group-hover:[animation-play-state:paused] whitespace-nowrap">
               {[...sscLogos, ...sscLogos].map((logo, index) => (
                 <div
                   key={`${logo.name}-duplicate-${index}`}
-                  className="glass-card rounded-xl px-8 py-4 mx-4 flex items-center justify-center min-w-[200px] h-24 hover:bg-white/50 transition-colors"
+                  className="glass-card rounded-xl px-8 py-4 mx-4 flex items-center justify-center min-w-[200px] h-24 hover:bg-white/50 hover:scale-110 active:scale-105 transition-all duration-300 ease-in-out hover:z-10"
                 >
                   <img
                     src={logo.src}
@@ -105,11 +105,11 @@ const GovernmentSection = () => {
           </h3>
 
           <div className="relative flex overflow-x-hidden group">
-            <div className="flex animate-marquee-slow whitespace-nowrap">
+            <div className="flex animate-marquee-slow group-hover:[animation-play-state:paused] whitespace-nowrap">
               {[...govtPrograms, ...govtPrograms].map((program, index) => (
                 <div
                   key={`${program.name}-${index}`}
-                  className="glass-card rounded-xl p-4 mx-4 flex flex-col items-center justify-center min-w-[180px] h-32 hover:bg-white/50 transition-colors gap-3"
+                  className="glass-card rounded-xl p-4 mx-4 flex flex-col items-center justify-center min-w-[180px] h-32 hover:bg-white/50 hover:scale-110 active:scale-105 transition-all duration-300 ease-in-out hover:z-10 gap-3"
                 >
                   <div className="h-16 w-full flex items-center justify-center">
                     <img
@@ -122,11 +122,11 @@ const GovernmentSection = () => {
                 </div>
               ))}
             </div>
-            <div className="absolute top-0 flex animate-marquee2-slow whitespace-nowrap">
+            <div className="absolute top-0 flex animate-marquee2-slow group-hover:[animation-play-state:paused] whitespace-nowrap">
               {[...govtPrograms, ...govtPrograms].map((program, index) => (
                 <div
                   key={`${program.name}-duplicate-${index}`}
-                  className="glass-card rounded-xl p-4 mx-4 flex flex-col items-center justify-center min-w-[180px] h-32 hover:bg-white/50 transition-colors gap-3"
+                  className="glass-card rounded-xl p-4 mx-4 flex flex-col items-center justify-center min-w-[180px] h-32 hover:bg-white/50 hover:scale-110 active:scale-105 transition-all duration-300 ease-in-out hover:z-10 gap-3"
                 >
                   <div className="h-16 w-full flex items-center justify-center">
                     <img
