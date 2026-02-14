@@ -10,13 +10,13 @@ const Footer = () => {
   return (
     <footer className="bg-white text-slate-900">
       <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center gap-3 w-fit">
-                <img src={logo} alt="SAN IT Solutions Logo" className="w-14 h-14 object-contain" />
-                <img src="/new-logo.png.jpg" alt="SAN IT Solutions" className="h-6 object-contain" />
+              <div className="flex flex-wrap items-center gap-3">
+                <img src={logo} alt="SAN IT Solutions Logo" className="w-14 h-14 object-contain flex-shrink-0" />
+                <img src="/new-logo.png.jpg" alt="SAN IT Solutions" className="h-8 w-auto object-contain max-w-[200px] sm:max-w-xs" />
               </div>
             </div>
             <p className="text-sm text-slate-600 leading-relaxed">
