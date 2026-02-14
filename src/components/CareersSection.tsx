@@ -12,7 +12,7 @@ const CareersSection = () => {
   };
 
   return (
-    <section id="careers" className="section-padding section-alt">
+    <section id="careers" className="section-padding bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

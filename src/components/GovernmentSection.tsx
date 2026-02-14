@@ -29,7 +29,7 @@ const govtPrograms = [
 
 const GovernmentSection = () => {
   return (
-    <section id="government" className="section-padding section-alt overflow-hidden">
+    <section id="government" className="section-padding bg-slate-50 overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -47,7 +47,7 @@ function AnimatedCounter({ value, suffix, isYear }: { value: number; suffix: str
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding section-alt">
+    <section id="about" className="section-padding bg-slate-50">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

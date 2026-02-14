@@ -11,7 +11,7 @@ const branches = [
 
 const PresenceSection = () => {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

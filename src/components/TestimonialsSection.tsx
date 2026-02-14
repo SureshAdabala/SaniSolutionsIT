@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
   }, [next]);
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-slate-50">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,9 +80,8 @@ const TestimonialsSection = () => {
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === current ? "w-6 bg-gold" : "w-2 bg-border"
-                  }`}
+                  className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-gold" : "w-2 bg-border"
+                    }`}
                 />
               ))}
             </div>

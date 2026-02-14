@@ -25,7 +25,7 @@ const clients = [
 
 const ClientsSection = () => {
   return (
-    <section id="clients" className="section-padding">
+    <section id="clients" className="section-padding bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
